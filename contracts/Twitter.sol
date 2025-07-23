@@ -22,6 +22,10 @@ contract Twitter {
     mapping (address => mapping (uint256 => Tweet)) private tweets;
     mapping (address => uint256) private tweetCount;
 
+    event TweetCreated(uint256 id, address author, string content, uint256 timestamp);
+    event TweetLiked(uint256 id, address author, uint256 likeCount, address liker);
+    event TweetUnliked(uint256 id, address author, uint256 likeCount, address liker);
+    
     constructor() {
         OWNER = msg.sender;
     }
@@ -43,6 +47,9 @@ contract Twitter {
         });
 
         tweets[msg.sender][currentTweetId] = newTweet;
+        
+        emit TweetCreated(currentTweetId, newTweet.author, newTweet.content, newTweet.timestamp);
+        
         currentTweetId++;
         tweetCount[msg.sender]++;
     }
@@ -51,11 +58,11 @@ contract Twitter {
         return tweets[msg.sender][_i];
     }
 
-    function getAllTweets() public view returns (Tweet[] memory) {
-        uint256 count = tweetCount[msg.sender];
+    function getAllTweets(address owner) public view returns (Tweet[] memory) {
+        uint256 count = tweetCount[owner];
         Tweet[] memory allTweets = new Tweet[](count);
         for (uint256 i = 0; i < count; i++) {
-            allTweets[i] = tweets[msg.sender][i];
+            allTweets[i] = tweets[owner][i];
         }
         
         return allTweets;
@@ -72,10 +79,14 @@ contract Twitter {
     function likeTweet(uint256 _id, address _author) external {
         require(tweets[_author][_id].id == _id, "Tweet does not exist");
         tweets[_author][_id].likes++;
+
+        emit TweetLiked(_id, _author, tweets[_author][_id].likes, msg.sender);
     }
 
     function unlikeTweet(uint256 _id, address _author) external {
         require(tweets[_author][_id].likes > 0, "Likes have not added yet");
         tweets[_author][_id].likes--;
+
+        emit TweetUnliked(_id, _author, tweets[_author][_id].likes, msg.sender);
     }
 }
