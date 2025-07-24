@@ -1,14 +1,15 @@
 // SPDX-License-Identifier: MIT
 
+import "@openzeppelin/contracts/access/Ownable.sol";
+
 pragma solidity ^0.8.0;
 
 // create a twitter contract
 // create a mapping between user and tweet
 
 
-contract Twitter {
+contract Twitter is Ownable {
     uint16 public MAX_TWEET_LENGTH = 200;
-    address OWNER;
     uint256 currentTweetId = 0; // global unique id
 
     struct Tweet {
@@ -26,14 +27,13 @@ contract Twitter {
     event TweetLiked(uint256 id, address author, uint256 likeCount, address liker);
     event TweetUnliked(uint256 id, address author, uint256 likeCount, address liker);
     
-    constructor() {
-        OWNER = msg.sender;
+    constructor() Ownable(msg.sender) {
     }
 
-    modifier onlyOwner() {
-        require(OWNER == msg.sender, "Only owner can change the tweet length");
-        _;
-    }
+    // modifier onlyOwner() {
+    //     require(OWNER == msg.sender, "Only owner can change the tweet length");
+    //     _;
+    // }
 
     function createTweet(string memory _input) public {
         require(bytes(_input).length <= MAX_TWEET_LENGTH, "Tweet content is lengthy");
@@ -73,7 +73,7 @@ contract Twitter {
     }
 
     function getOwner() public view returns (address) {
-        return OWNER;
+        return Ownable.owner();
     }
 
     function likeTweet(uint256 _id, address _author) external {
@@ -88,5 +88,15 @@ contract Twitter {
         tweets[_author][_id].likes--;
 
         emit TweetUnliked(_id, _author, tweets[_author][_id].likes, msg.sender);
+    }
+
+    function getTotalLikes(address _author) public view returns (uint256) {
+        uint256 totalLikes = 0;
+        uint256 tweetCountForUser = tweetCount[_author];
+        for (uint i = 0; i < tweetCountForUser; i++) {
+            totalLikes += tweets[_author][i].likes;
+        }
+
+        return totalLikes;
     }
 }
