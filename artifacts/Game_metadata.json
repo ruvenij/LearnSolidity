@@ -69,7 +69,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Game.sol": "Game"
+			"contracts/Basic/Game.sol": "Game"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -83,7 +83,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Game.sol": {
+		"contracts/Basic/Game.sol": {
 			"keccak256": "0xc3ae54dd963b5ba14265d6202ef5189a043646fe9d0371883020174ee97390d1",
 			"license": "MIT",
 			"urls": [

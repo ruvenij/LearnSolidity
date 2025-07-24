@@ -90,7 +90,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Expenses.sol": "ExpenseTracker"
+			"contracts/Basic/Expenses.sol": "ExpenseTracker"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -104,7 +104,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Expenses.sol": {
+		"contracts/Basic/Expenses.sol": {
 			"keccak256": "0x82865a3d41cce3048253bd6f1118656082b51bae0c3cbb96182a1ebee7160c8c",
 			"license": "MIT",
 			"urls": [

@@ -80,7 +80,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Event.sol": "EventExample"
+			"contracts/Basic/Event.sol": "EventExample"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -94,7 +94,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Event.sol": {
+		"contracts/Basic/Event.sol": {
 			"keccak256": "0x65ac26ce964866825cb61b0c51b0f65128901d43a78346a5742b00abe7210692",
 			"license": "MIT",
 			"urls": [

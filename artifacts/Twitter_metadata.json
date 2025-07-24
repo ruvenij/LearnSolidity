@@ -6,7 +6,13 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_profileContract",
+						"type": "address"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
 			},
@@ -143,19 +149,6 @@
 				],
 				"name": "TweetUnliked",
 				"type": "event"
-			},
-			{
-				"inputs": [],
-				"name": "MAX_TWEET_LENGTH",
-				"outputs": [
-					{
-						"internalType": "uint16",
-						"name": "",
-						"type": "uint16"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
 			},
 			{
 				"inputs": [
@@ -412,7 +405,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Twitter.sol": "Twitter"
+			"contracts/Basic/Twitter.sol": "Twitter"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -442,12 +435,12 @@
 				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
 			]
 		},
-		"contracts/Twitter.sol": {
-			"keccak256": "0xa86fa05001a4294fca8f6dfdac6b5142ca1a1d6db7718b6d5f0f9cded10dde06",
+		"contracts/Basic/Twitter.sol": {
+			"keccak256": "0x04f4694696454d79fe4fc5c02d0fa00f9755c9a91b393361f92bded6785524d2",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://618432887eb0a6032c418a24cc7796e7d13494d5d3d2ec9fccf1d5d91c398cc7",
-				"dweb:/ipfs/QmeBq2S6VpDoRGZ2AK9rVv4z6PA6mqpr7pDRv8B3PvZdHj"
+				"bzz-raw://4c6b1b40ae74474ca7f64a6d98086fe6f58803892a6bde415b97dbe65d569ecd",
+				"dweb:/ipfs/QmSHh3ptXVRCtUd5NuzR2myLwEpZ2zrcxidenTXvheiFKG"
 			]
 		}
 	},

@@ -66,7 +66,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/User.sol": "User"
+			"contracts/Basic/User.sol": "User"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -80,7 +80,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/User.sol": {
+		"contracts/Basic/User.sol": {
 			"keccak256": "0x748caa4dbde48df7d65ad41887fa4f343bedd0115dfd758e36e2d7a4202546d5",
 			"license": "MIT",
 			"urls": [

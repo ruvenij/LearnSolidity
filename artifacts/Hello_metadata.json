@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.30+commit.73712a01"
+		"version": "0.8.24+commit.e11b9ed9"
 	},
 	"language": "Solidity",
 	"output": {
@@ -45,9 +45,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Hello.sol": "Hello"
+			"contracts/Basic/Hello.sol": "Hello"
 		},
-		"evmVersion": "prague",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -59,7 +59,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Hello.sol": {
+		"contracts/Basic/Hello.sol": {
 			"keccak256": "0x6820fd9de42a5c8a31a94278e4e5807ae258f67007eb49475a11211d16f89b17",
 			"license": "MIT",
 			"urls": [

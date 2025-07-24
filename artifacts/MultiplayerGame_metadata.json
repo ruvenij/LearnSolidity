@@ -45,7 +45,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Inheritance.sol": "MultiplayerGame"
+			"contracts/Basic/Inheritance.sol": "MultiplayerGame"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -59,7 +59,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Inheritance.sol": {
+		"contracts/Basic/Inheritance.sol": {
 			"keccak256": "0x098800f7630e77b0d6d3257d1fad26791c63315e9d9182d959810fcd4d83391d",
 			"license": "MIT",
 			"urls": [
